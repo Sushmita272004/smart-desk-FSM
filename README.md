@@ -1,30 +1,26 @@
-## 🎯 Emotion-Aware Smart Desk Assistant (Verilog + FSM)
-This project implements an FSM-based Emotion-Aware Desk Assistant that adapts ambient lighting (led_color) and audio alerts (audio) based on user emotion inputs.
+# Emotion-Aware Smart Desk Assistant (FSM-Based, Verilog)
 
-## 💡 Features
-- FSM detects emotions: Focus, Stress, Sleepy, Neutral
-- Real-time reactive lighting and alert system
-- Glitch-free outputs using registered logic
-- Designed in Verilog HDL and verified using GTKWave
+This project implements a **Finite State Machine (FSM)** in Verilog to control LED lighting and audio output based on user emotion inputs.
 
-## 🧠 Emotion Mapping
-Emotion Code	State	LED Color	Audio
-- 000	IDLE	Off	Off
-- 001	FOCUS	Green	Off
-- 010	STRESS	Red	On
-- 011	SLEEPY	Blue	On
+## 🧠 Features
+- Emotion-based LED and audio control logic
+- Uses registered outputs for glitch-free behavior
+- Designed using FSM principles in Verilog
+- Simulated using Icarus Verilog and GTKWave
 
-## 🛠 Tech Stack
-- Verilog HDL (FSM Design)
+## 🧪 Emotion Mapping
+| Emotion Code | State    | LED Color | Audio |
+|--------------|----------|-----------|-------|
+| `000`        | IDLE     | Off       | Off   |
+| `001`        | FOCUS    | Green     | Off   |
+| `010`        | STRESS   | Red       | On    |
+| `011`        | SLEEPY   | Blue      | On    |
+
+## 🔧 Files
+- `smart_desk_fsm.v` – Verilog FSM implementation
+- `fsm_testbench.v` – Testbench to simulate emotion inputs
+- `.gitignore` – To skip simulation files
+
+## 🛠 Tools Used
+- Verilog HDL (Icarus Verilog)
 - GTKWave for waveform analysis
-- Icarus Verilog for simulation
-
-## 📁 File Structure
-- smart_desk_fsm.v — main FSM logic
-- fsm_testbench.v — testbench for emotion input simulation
-- fsm.vcd — waveform file (view with GTKWave)
-
-## how to run
-- iverilog -o desk.vvp smart_desk_fsm.v fsm_testbench.v
-- vvp desk.vvp
-- gtkwave fsm.vcd
