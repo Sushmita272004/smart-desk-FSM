@@ -1,6 +1,8 @@
 # Emotion-Aware Smart Desk Assistant (FSM-Based, Verilog)
 
 This project implements a **Finite State Machine (FSM)** in Verilog to control LED lighting and audio output based on user emotion inputs.
+An emotion-responsive desk controller using FSM in Verilog, simulating adaptive LED lighting and audio feedback.
+
 
 ## 🧠 Features
 - Emotion-based LED and audio control logic
@@ -24,3 +26,10 @@ This project implements a **Finite State Machine (FSM)** in Verilog to control L
 ## 🛠 Tools Used
 - Verilog HDL (Icarus Verilog)
 - GTKWave for waveform analysis
+
+## 🔧 How to Run
+
+```bash
+iverilog -o desk.vvp smart_desk_fsm.v fsm_testbench.v
+vvp desk.vvp
+gtkwave fsm.vcd
